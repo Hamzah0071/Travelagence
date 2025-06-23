@@ -129,7 +129,7 @@ section h2::after {
     padding: 1em 0;
 }
 
-.services-icons-grid > div {
+.services-icons-grid>div {
     flex-basis: 180px;
     text-align: center;
     padding: 1.5em;
@@ -140,7 +140,7 @@ section h2::after {
     cursor: pointer;
 }
 
-.services-icons-grid > div:hover {
+.services-icons-grid>div:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     background-color: #eef;
@@ -365,7 +365,7 @@ figure h4 {
         gap: 25px;
     }
 
-    .services-icons-grid > div {
+    .services-icons-grid>div {
         flex-basis: 140px;
     }
 
@@ -382,30 +382,34 @@ figure h4 {
         height: 180px;
     }
 }
+
 .container {
-  text-align: center; /* Centers inline-level content */
+    text-align: center;
+    /* Centers inline-level content */
 }
 
 /* Your existing .button CSS */
 .button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #3498db; /* Bleu */
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    /* Bleu */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-  background-color: #2980b9; /* Bleu plus foncé */
-  transform: scale(1.05);
+    background-color: #2980b9;
+    /* Bleu plus foncé */
+    transform: scale(1.05);
 }
 
 .button:active {
-  background-color: #1f618d;
-  transform: scale(0.98);
+    background-color: #1f618d;
+    transform: scale(0.98);
 }
