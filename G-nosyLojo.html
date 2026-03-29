@@ -1,54 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="G-style-image.css">
-    <title>Nosy Lojo - Diego Suarez</title>
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosy Lojo — Diego Suarez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="photo/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header style="background-image: url('photo/Nosy_lojo/paisage.jpg'); background-size: cover; background-position: center;">
-    <h1>Nosy Lojo</h1>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>Découvrez nos plage</h2>
-            <p>
-                Bienvenue dans notre galerie spesiale les image de la mer surtout Nosy Lojo . Cliquez sur n'importe quelle vignette pour l'agrandir et voir les détails.
-                Nous avons sélectionné des moments spéciaux pour vous. Profitez de l'expérience immersive !
-            </p>
+<header>
+  <div class="header-bg" style="background-image: url('photo/Nosy_lojo/vue-de-loin.jpg');"></div>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1><i class="fa-solid fa-umbrella-beach" style="font-size:0.6em;opacity:0.8;margin-right:12px;"></i>Nosy Lojo</h1>
+    <p class="header-sub"><i class="fa-solid fa-location-dot"></i>&nbsp; Île sacrée · Diego Suarez</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,60 1080,0 1440,32 L1440,54 L0,54 Z" fill="#fffdf8"/>
+  </svg>
+</header>
 
-            <div class="gallery">
-                <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/nosy lojo.jpg">
-                    <img src="photo/Nosy_lojo/nosy lojo.jpg" alt="Paysage magnifique">
-                </div>
+<nav class="navbar">
+  <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+  <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+  <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</nav>
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/paisage.jpg">
-                    <img src="photo/Nosy_lojo/paisage.jpg" alt="Architecture moderne">
-                </div>
+<main class="container">
+  <section>
+    <h2><i class="fa-solid fa-star"></i> Nosy Lojo — L'île incontournable</h2>
+    <h3>Un lieu sacré et emblématique de Diego Suarez</h3>
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/vue-de-loin.jpg">
-                    <img src="photo/Nosy_lojo/vue-de-loin.jpg" alt="Coucher de soleil">
-                </div>
-
-                <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/look.jpg">
-                    <img src="photo/Nosy_lojo/look.jpg" alt="Coucher de soleil">
-                </div>
-            </div>
-        </section>
+    <div style="background:linear-gradient(135deg,var(--ocean-pale),#d8f0f7);border-radius:var(--radius);padding:28px 32px;margin-bottom:32px;border-left:5px solid var(--ocean);">
+      <p style="color:var(--text);font-size:1rem;line-height:1.85;">
+        <i class="fa-solid fa-circle-info" style="color:var(--ocean);margin-right:8px;"></i>
+        Nosy Lojo est un endroit <strong>sacré et incontournable</strong> de Diego Suarez. Prendre une photo ici,
+        c'est comme une preuve d'avoir visité Diego Suarez. L'île offre une vue panoramique époustouflante
+        sur la baie et constitue un symbole fort de la région.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;">
+        <span class="badge"><i class="fa-solid fa-star"></i> Site emblématique</span>
+        <span class="badge"><i class="fa-solid fa-water"></i> Vue sur la baie</span>
+        <span class="badge"><i class="fa-solid fa-camera"></i> Photo incontournable</span>
+        <span class="badge"><i class="fa-solid fa-place-of-worship"></i> Lieu sacré</span>
+      </div>
     </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-button" id="closeButton">&times;</span>
-        <div class="lightbox-content" id="lightboxContent"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/vue-de-loin.jpg">
+        <img src="photo/Nosy_lojo/vue-de-loin.jpg" alt="Nosy Lojo vue de loin">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Vue de loin</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/look.jpg">
+        <img src="photo/Nosy_lojo/look.jpg" alt="Nosy Lojo côté mer">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Côté mer</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/Nosy_lojo/paisage.jpg">
+        <img src="photo/Nosy_lojo/paisage.jpg" alt="Nosy Lojo panorama">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Panorama</span></div>
+      </div>
     </div>
+  </section>
 
-    <a href="1-index.html" class="button" style="margin-left: 450px;">Retournez vers la premier page</a>
-    <script src="script html2.js"></script>
+  <a href="1-index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+</main>
 
+<footer class="footer">
+  <div class="footer-logo">Diego Suarez</div>
+  <p>La perle du nord de Madagascar</p>
+  <div class="footer-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</footer>
+
+<!-- <div id="lightbox" class="lightbox">
+  <button class="lb-close" id="closeButton"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-nav lb-prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="lb-nav lb-next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+    <img class="lightbox-content" id="lbMainImg" src="" alt="">
+    <div id="lbCounter" style="color:rgba(255,255,255,0.55);font-size:0.82rem;letter-spacing:1px;"></div>
+    <div id="lbThumbs" class="lb-thumbs"></div>
+  </div>
+</div> -->
+
+<style>
+  .lb-nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:white;font-size:1.3rem;width:50px;height:50px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s;backdrop-filter:blur(4px);z-index:10001;}
+  .lb-nav:hover{background:var(--ocean);transform:translateY(-50%) scale(1.1);}
+  .lb-prev{left:18px;}.lb-next{right:18px;}
+  .lb-thumbs{display:flex;gap:8px;overflow-x:auto;max-width:80vw;padding-bottom:4px;}
+  .lb-thumbs img{width:50px;height:50px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:0.45;border:2px solid transparent;transition:opacity .2s,border-color .2s;}
+  .lb-thumbs img.active{opacity:1;border-color:var(--ocean-light);}
+</style>
+<script src="script.js"></script>
 </body>
 </html>

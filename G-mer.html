@@ -1,54 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="G-style-image.css">
-    <title>Galerie Interactive - La mer de Diego Suarez</title>
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Mer — Diego Suarez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="photo/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header style="background-image: url('photo/Mer/baie-de-Sakalava.jpg'); background-size: cover; background-position: center;">
-    <h1>MER</h1>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>Découvrez nos plage</h2>
-            <p>
-                Bienvenue dans notre galerie spesiale les image de la mer . Cliquez sur n'importe quelle vignette pour l'agrandir et voir les détails.
-                Nous avons sélectionné des moments spéciaux pour vous. Profitez de l'expérience immersive !
-            </p>
+<header class="header-page-mer">
+  <div class="header-bg" style="background-image: url('photo/Mer/ramena.jpg');"></div>
+  <!-- <div class="header-overlay"></div> -->
+  <div class="header-content">
+    <h1><i class="fa-solid fa-water"></i>La Mer</h1>
+    <p class="header-sub"><i class="fa-solid fa-location-dot"></i>&nbsp; Mer d\'Émeraude · Baie de Diego</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,60 1080,0 1440,32 L1440,54 L0,54 Z" fill="#fffdf8"/>
+  </svg>
+</header>
 
-            <div class="gallery">
-                <div class="gallery-item" data-type="image" data-full-src="photo/Mer/1741689967464.jpg">
-                    <img src="photo/Mer/1741689967464.jpg" alt="Paysage magnifique">
-                </div>
+<nav class="navbar">
+  <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+  <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+  <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</nav>
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Mer/mer d'emerod.jpg">
-                    <img src="photo/Mer/mer d'emerod.jpg" alt="Architecture moderne">
-                </div>
+<main class="container">
+  <section>
+    <h2><i class="fa-solid fa-sailboat"></i> Les Eaux Cristallines</h2>
+    <p class="section-subtitle">Découvrez les plus belles côtes du nord de Madagascar</p>
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Mer/Pixel_20250505_151228_✅𝐏𝐨𝐫𝐭𝐚𝐢𝐭📸 𝐋𝐌𝐂8.4 𝐫15💗 𝐁𝐲 𝐃𝐚𝐧𝐲.jpg">
-                    <img src="photo/Mer/Pixel_20250505_151228_✅𝐏𝐨𝐫𝐭𝐚𝐢𝐭📸 𝐋𝐌𝐂8.4 𝐫15💗 𝐁𝐲 𝐃𝐚𝐧𝐲.jpg" alt="Coucher de soleil">
-                </div>
-
-                <div class="gallery-item" data-type="image" data-full-src="photo/Mer/ramaina.jpg">
-                    <img src="photo/Mer/ramaina.jpg" alt="Coucher de soleil">
-                </div>
-            </div>
-        </section>
+    <div class="info-box-ocean">
+      <p>
+        <i class="fa-solid fa-anchor"></i>
+        Diego Suarez est entourée par la mer, et chaque côte est plus belle que l'autre.
+         La <strong>Mer d'Émeraude</strong> est un lagon aux eaux turquoise peu profondes,
+          idéal pour la détente et les sports nautiques. C'est un véritable paradis pour les amoureux de la nature.
+      </p>
+      <div class="badge-container">
+        <span class="badge badge-ocean"><i class="fa-solid fa-swimmer"></i> Baignade</span>
+        <span class="badge badge-ocean"><i class="fa-solid fa-wind"></i> Kitesurf</span>
+        <span class="badge badge-ocean"><i class="fa-solid fa-fish"></i> Plongée</span>
+        <span class="badge badge-ocean"><i class="fa-solid fa-sun"></i> Détente</span>
+      </div>
     </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-button" id="closeButton">&times;</span>
-        <div class="lightbox-content" id="lightboxContent"></div>
+    <div class="fact-grid">
+      <div class="fact-card card-ocean">
+        <i class="fa-solid fa-gem"></i>
+        <div class="fact-title">Mer d'Émeraude</div>
+        <p>Un lagon protégé par une barrière de corail, célèbre pour sa couleur unique au monde.</p>
+      </div>
+      <div class="fact-card card-ocean">
+        <i class="fa-solid fa-ship"></i>
+        <div class="fact-title">Excursions</div>
+        <p>Des bateaux traditionnels vous emmènent passer la journée sur des îlots déserts.</p>
+      </div>
+      <div class="fact-card card-ocean">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <div class="fact-title">Plages de rêve</div>
+        <p>Ramena et les Trois Baies offrent des étendues de sable blanc à perte de vue.</p>
+      </div>
     </div>
 
-    <a href="1-index.html" class="button" style="margin-left: 450px;">Retournez vers la premier page</a>
-    <script src="script html2.js"></script>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-type="image" data-full-src="photo/Mer/baie-de-Sakalava.jpg">
+        <img src="photo/Mer/baie-de-Sakalava.jpg" alt="Mer d\'Émeraude">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Mer d'Émeraude</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/Mer/ramena.jpg">
+        <img src="photo/Mer/ramena.jpg" alt="Plage de Ramena">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Plage de Ramena</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/Mer/baie-de-Sakalava.jpg">
+        <img src="photo/Mer/baie-de-Sakalava.jpg" alt="Baie de Diego">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Baie de Diego</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/Mer/kitesurf.jpg">
+        <img src="photo/Mer/kitesurf.jpg" alt="Kitesurf à Diego">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Kitesurf</span></div>
+      </div>
+    </div>
+  </section>
 
+  <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+</main>
+
+<footer class="footer">
+  <div class="footer-logo">Diego Suarez</div>
+  <p>La perle du nord de Madagascar</p>
+  <div class="footer-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</footer>
+
+<!-- <div id="lightbox" class="lightbox">
+  <button class="lb-close" id="closeButton"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-nav lb-prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="lb-nav lb-next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lightbox-inner-content">
+    <img class="lightbox-content" id="lbMainImg" src="" alt="">
+    <div id="lbCounter"></div>
+    <div id="lbThumbs" class="lb-thumbs"></div>
+  </div>
+</div> -->
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,61 +1,381 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="style-s-inscrire.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription — Diego Suarez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .inscription-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .insc-hero {
+      background: linear-gradient(135deg, #0d4a5e 0%, #1a6e8a 60%, #2a9ab8 100%);
+      padding: 72px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .insc-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .insc-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .insc-hero p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      position: relative;
+    }
+    .insc-hero .wave {
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+    }
+    .insc-body {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 60px 24px 80px;
+      background: var(--white);
+    }
+    .insc-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(26,110,138,0.13);
+      border: 1.5px solid var(--sand);
+      padding: 48px 44px;
+      width: 100%;
+      max-width: 520px;
+    }
+    .insc-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--ocean);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .insc-card .sub {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+    .form-field {
+      margin-bottom: 18px;
+    }
+    .form-field label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ocean);
+      margin-bottom: 7px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 2px solid rgba(26,110,138,0.18);
+      border-radius: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      background: var(--white);
+      color: var(--text);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      appearance: none;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--ocean);
+      box-shadow: 0 0 0 4px rgba(26,110,138,0.1);
+    }
+    .form-field textarea { min-height: 90px; resize: vertical; }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 22px 0;
+      color: var(--text-soft);
+      font-size: 0.82rem;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--sand);
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--ocean-pale);
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid rgba(26,110,138,0.12);
+      margin-bottom: 22px;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: 18px; height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--ocean);
+      cursor: pointer;
+    }
+    .checkbox-group label {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      cursor: pointer;
+      line-height: 1.55;
+    }
+    .checkbox-group label a { color: var(--ocean); }
+    .btn-inscription {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--ocean), var(--ocean-light));
+      color: #fff;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 24px rgba(26,110,138,0.3);
+      letter-spacing: 0.04em;
+    }
+    .btn-inscription:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(26,110,138,0.42);
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+    .login-link a { color: var(--ocean); font-weight: 700; text-decoration: none; }
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+    .benefit-item i {
+      color: var(--green);
+      width: 18px;
+      text-align: center;
+    }
+    /* Succès */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+    .success-msg i {
+      font-size: 3.5rem;
+      color: var(--green);
+      display: block;
+      margin-bottom: 16px;
+      animation: bounceIn 0.6s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .success-msg h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--ocean);
+      margin-bottom: 8px;
+    }
+    @keyframes bounceIn {
+      from { transform: scale(0.4); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    @media(max-width:520px) {
+      .insc-card { padding: 28px 20px; }
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body>
-    <h2>Entrez vos renseignements</h2>
-    <form id="formulaire">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required><br>
+<body class="inscription-wrap">
 
-        <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" required><br>
+<!-- Hero -->
+<div class="insc-hero">
+  <h1><i class="fa-solid fa-user-plus" style="font-size:0.7em;margin-right:10px;opacity:0.85;"></i>Rejoignez-nous</h1>
+  <p>Créez votre compte et explorez Diego Suarez avec nous</p>
+  <svg class="wave" viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,60 1080,0 1440,32 L1440,54 L0,54 Z" fill="#fffdf8"/>
+  </svg>
+</div>
 
-        <label for="age">Âge :</label>
-        <input type="number" id="age" name="age" required><br>
+<!-- Corps -->
+<div class="insc-body">
+  <div class="insc-card">
 
-        <label for="pays">Pays :</label>
-        <input type="text" id="pays" name="pays" required><br>
+    <!-- Avantages -->
+    <h2><i class="fa-solid fa-sparkles"></i> Créer un compte</h2>
+    <p class="sub">Rejoignez notre communauté de voyageurs et amoureux de Madagascar</p>
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required><br>
+    <div class="benefits">
+      <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> Accès à toutes nos galeries exclusives</div>
+      <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> Laisser des commentaires et partager vos expériences</div>
+      <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> Recevoir nos nouvelles vidéos et photos en avant-première</div>
+      <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> Planifier votre voyage avec nos conseils personnalisés</div>
+    </div>
 
-    
+    <div class="divider"><i class="fa-solid fa-pen-nib"></i> Formulaire d'inscription</div>
 
-    <form>
-        <label for="region">Région :</label>
-        <select id="region" name="region">
-            <option value="">-- Choisissez une région --</option>
-            <option value="+201">Diego Suarez (201)</option>
-            <option value="+202">Antananarivo (202)</option>
-            <option value="+203">Fianarantsoa (203)</option>
-            <option value="+204">Mahajanga (204)</option>
-            <option value="+205">Toamasina (205)</option>
-            <option value="+206">Toliara (206)</option>
+    <!-- Formulaire -->
+    <form id="inscriptionForm">
+
+      <div class="form-row-2">
+        <div class="form-field">
+          <label><i class="fa-solid fa-user"></i> Prénom</label>
+          <input type="text" placeholder="Jean" required>
+        </div>
+        <div class="form-field">
+          <label><i class="fa-solid fa-user"></i> Nom</label>
+          <input type="text" placeholder="Dupont" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-envelope"></i> Email</label>
+        <input type="email" placeholder="jean.dupont@email.com" required>
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-phone"></i> Téléphone</label>
+        <input type="tel" placeholder="+261 32 00 000 00">
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-earth-africa"></i> Pays d'origine</label>
+        <select>
+          <option value="">Sélectionnez votre pays…</option>
+          <option value="mg">🇲🇬 Madagascar</option>
+          <option value="fr">🇫🇷 France</option>
+          <option value="re">🇷🇪 La Réunion</option>
+          <option value="mu">🇲🇺 Maurice</option>
+          <option value="ch">🇨🇭 Suisse</option>
+          <option value="be">🇧🇪 Belgique</option>
+          <option value="other">🌍 Autre</option>
         </select>
+      </div>
 
-        <label for="numero">Numéro régional sélectionné :</label>
-        <input type="text" id="numero" name="numero" required>
+      <div class="form-field">
+        <label><i class="fa-solid fa-lock"></i> Mot de passe</label>
+        <input type="password" placeholder="Minimum 8 caractères" required minlength="8">
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-lock"></i> Confirmer le mot de passe</label>
+        <input type="password" placeholder="Répétez votre mot de passe" required minlength="8" id="confirmPwd">
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="cgv" required>
+        <label for="cgv">
+          J'accepte les <a href="#">conditions d'utilisation</a> et la
+          <a href="#">politique de confidentialité</a> de la Galerie Diego Suarez.
+        </label>
+      </div>
+
+      <button type="submit" class="btn-inscription">
+        <i class="fa-solid fa-rocket"></i> Créer mon compte
+      </button>
+
+      <div class="login-link">
+        Déjà inscrit ? <a href="#">Se connecter</a>
+      </div>
+
     </form>
 
-    <script>
-        const regionSelect = document.getElementById("region");
-        const numeroInput = document.getElementById("numero");
+    <!-- Message succès -->
+    <div class="success-msg" id="successMsg">
+      <i class="fa-solid fa-circle-check"></i>
+      <h3>Bienvenue à Diego Suarez !</h3>
+      <p style="color:var(--text-soft);font-size:0.92rem;margin-bottom:24px;">
+        Votre compte a été créé avec succès. Explorez maintenant toutes nos galeries !
+      </p>
+      <a href="1-index.html" class="btn-cta">
+        <i class="fa-solid fa-compass"></i> Commencer l'exploration
+      </a>
+    </div>
 
-        regionSelect.addEventListener("change", function () {
-            numeroInput.value = regionSelect.value;
-        });
-    </script>
+  </div>
+</div>
 
-        
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">Diego Suarez</div>
+  <p>La perle du nord de Madagascar</p>
+  <div class="footer-links">
+    <a href="1-index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="1-index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+    <a href="1-index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</footer>
 
-        <button type="submit" class="btn">S'inscrire</button>
-    </form>
+<script>
+document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const pwd = this.querySelector('input[type="password"]').value;
+  const confirm = document.getElementById('confirmPwd').value;
+  if (pwd !== confirm) {
+    document.getElementById('confirmPwd').style.borderColor = 'var(--coral)';
+    document.getElementById('confirmPwd').style.boxShadow = '0 0 0 4px rgba(224,92,58,0.12)';
+    document.getElementById('confirmPwd').placeholder = '⚠️ Les mots de passe ne correspondent pas';
+    return;
+  }
+  this.style.display = 'none';
+  const msg = document.getElementById('successMsg');
+  msg.style.display = 'block';
+  msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
 
-    <a href="1-index.html" class="retour">Retourner vers la première page</a>
+// Scroll animation entrée card
+window.addEventListener('load', () => {
+  const card = document.querySelector('.insc-card');
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(32px)';
+  card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  setTimeout(() => {
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+  }, 100);
+});
+</script>
 </body>
 </html>

@@ -1,62 +1,157 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="G-style-image.css">
-    <title>Animaux- Diego Suarez</title>
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animaux — Diego Suarez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="photo/logo.png" type="image/png">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header style="background-image: url('photo/Animaux/lemurien.jpg'); background-size: cover; background-position: center;">
-    <h1>Animaux - Diego Suarez</h1>
-    </header>
+<!-- ══ HEADER ════════════════════════════════════════════════════ -->
+<header>
+  <div class="header-bg" style="background-image: url('photo/Animaux/lemurien.jpg');"></div>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1><i class="fa-solid fa-paw" style="font-size:0.6em; opacity:0.8; margin-right:12px;"></i>Les Animaux</h1>
+    <p class="header-sub"><i class="fa-solid fa-location-dot"></i>&nbsp; Diego Suarez · Madagascar</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,60 1080,0 1440,32 L1440,54 L0,54 Z" fill="#fffdf8"/>
+  </svg>
+</header>
 
-    <div class="container">
-        <section>
-            <h2>Découvrez nos Animaux</h2>
-            <p>
-                Bienvenue dans notre galerie spesiale les image de notre merveilleuse ville . Cliquez sur n'importe quelle vignette pour l'agrandir et voir les détails.
-                Nous avons sélectionné des moments spéciaux pour vous. Profitez de l'expérience immersive !
-            </p>
+<!-- ══ NAVIGATION ═════════════════════════════════════════════════ -->
+<nav class="navbar">
+  <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+  <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+  <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</nav>
 
-            <div class="gallery">
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/cameleon.jpg">
-                    <img src="photo/Animaux/cameleon.jpg" alt="Paysage magnifique">
-                </div>
+<!-- ══ MAIN ═══════════════════════════════════════════════════════ -->
+<main class="container">
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/cameleon2.jpg">
-                    <img src="photo/Animaux/cameleon2.jpg" alt="Coucher de soleil">
-                </div>
+  <section>
+    <h2><i class="fa-solid fa-frog"></i> Faune de Diego Suarez</h2>
+    <h3>La biodiversité unique de Madagascar, à travers nos objectifs</h3>
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/chat.jpg">
-                    <img src="photo/Animaux/chat.jpg" alt="Architecture moderne">
-                </div>
-
-                <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/lemurien.jpg">
-                    <img src="photo/Animaux/lemurien.jpg" alt="Coucher de soleil">
-                </div>
-
-                <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/chevre.jpg">
-                    <img src="photo/Animaux/chevre.jpg" alt="Coucher de soleil">
-                </div>
-
-            </div>
-        </section>
+    <!-- Badges info -->
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px;">
+      <span class="badge"><i class="fa-solid fa-earth-africa"></i> Espèces endémiques</span>
+      <span class="badge"><i class="fa-solid fa-eye"></i> Observation faune</span>
+      <span class="badge"><i class="fa-solid fa-camera"></i> Photographie animalière</span>
     </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-button" id="closeButton">&times;</span>
-        <div class="lightbox-content" id="lightboxContent"></div>
-    </div>
+    <div class="gallery-grid">
 
-    <a href="1-index.html" class="button" style="margin-left: 450px;">Retournez vers la premier page</a>
-    <script src="script html2.js"></script>
-        
-    </script>
+      <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/cameleon.jpg">
+        <img src="photo/Animaux/cameleon.jpg" alt="Caméléon">
+        <div class="item-overlay">
+          <span><i class="fa-solid fa-expand"></i> Caméléon</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/cameleon2.jpg">
+        <img src="photo/Animaux/cameleon2.jpg" alt="Caméléon 2">
+        <div class="item-overlay">
+          <span><i class="fa-solid fa-expand"></i> Caméléon</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/chat.jpg">
+        <img src="photo/Animaux/chat.jpg" alt="Chat">
+        <div class="item-overlay">
+          <span><i class="fa-solid fa-expand"></i> Chat malgache</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/lemurien.jpg">
+        <img src="photo/Animaux/lemurien.jpg" alt="Lémurien">
+        <div class="item-overlay">
+          <span><i class="fa-solid fa-expand"></i> Lémurien</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="image" data-full-src="photo/Animaux/chevre.jpg">
+        <img src="photo/Animaux/chevre.jpg" alt="Chèvre">
+        <div class="item-overlay">
+          <span><i class="fa-solid fa-expand"></i> Chèvre locale</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bouton retour -->
+  <a href="index.html" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+  </a>
+
+</main>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-logo">Diego Suarez</div>
+  <p>La perle du nord de Madagascar</p>
+  <div class="footer-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</footer>
+
+<!-- ══ LIGHTBOX ═══════════════════════════════════════════════════ -->
+<!-- <div id="lightbox" class="lightbox">
+  <button class="lb-close" id="closeButton"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-nav lb-prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="lb-nav lb-next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-wrap" style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+    <img class="lightbox-content" id="lbMainImg" src="" alt="">
+    <div id="lbCounter" style="color:rgba(255,255,255,0.55);font-size:0.82rem;letter-spacing:1px;"></div>
+    <div id="lbThumbs" class="lb-thumbs"></div>
+  </div>
+</div> -->
+
+<style>
+  .lb-nav {
+    position: fixed;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    border: none; color: white;
+    font-size: 1.3rem;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.25s, transform 0.25s;
+    backdrop-filter: blur(4px);
+    z-index: 10001;
+  }
+  .lb-nav:hover { background: var(--ocean); transform: translateY(-50%) scale(1.1); }
+  .lb-prev { left: 18px; }
+  .lb-next { right: 18px; }
+  .lb-thumbs {
+    display: flex; gap: 8px;
+    overflow-x: auto;
+    max-width: 80vw;
+    padding-bottom: 4px;
+  }
+  .lb-thumbs img {
+    width: 50px; height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.45;
+    border: 2px solid transparent;
+    transition: opacity 0.2s, border-color 0.2s;
+  }
+  .lb-thumbs img.active { opacity: 1; border-color: var(--ocean-light); }
+</style>
+
+<script src="script.js"></script>
 </body>
 </html>

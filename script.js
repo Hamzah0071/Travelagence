@@ -1,40 +1,96 @@
-// Lightbox
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lbMainImg = document.getElementById('lbMainImg');
+  const lbThumbs = document.getElementById('lbThumbs');
+  const lbCounter = document.getElementById('lbCounter');
+  const closeButton = document.getElementById('closeButton');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
 
-document.querySelectorAll('.lightbox-img').forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = img.src;
+  let currentGalleryImages = [];
+  let currentIndex = 0;
+
+  function openLightbox(images, index) {
+    currentGalleryImages = images;
+    currentIndex = index;
+    updateLightboxContent();
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  function updateLightboxContent() {
+    if (currentGalleryImages.length === 0) return;
+
+    lbMainImg.src = currentGalleryImages[currentIndex].fullSrc;
+    lbMainImg.alt = currentGalleryImages[currentIndex].alt;
+    lbCounter.textContent = `${currentIndex + 1} / ${currentGalleryImages.length}`;
+
+    lbThumbs.innerHTML = '';
+    currentGalleryImages.forEach((image, index) => {
+      const thumb = document.createElement('img');
+      thumb.src = image.src;
+      thumb.alt = image.alt;
+      thumb.classList.add('thumbnail');
+      if (index === currentIndex) {
+        thumb.classList.add('active');
+      }
+      thumb.addEventListener('click', () => {
+        currentIndex = index;
+        updateLightboxContent();
+      });
+      lbThumbs.appendChild(thumb);
     });
-});
+  }
 
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
+  function navigate(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+      currentIndex = currentGalleryImages.length - 1;
+    } else if (currentIndex >= currentGalleryImages.length) {
+      currentIndex = 0;
+    }
+    updateLightboxContent();
+  }
 
-window.addEventListener('click', e => {
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const galleryGrid = item.closest('.gallery-grid');
+      const imagesInGrid = Array.from(galleryGrid.querySelectorAll('.gallery-item')).map(gItem => ({
+        src: gItem.querySelector('img').src,
+        fullSrc: gItem.dataset.fullSrc,
+        alt: gItem.querySelector('img').alt
+      }));
+      const clickedIndex = Array.from(galleryGrid.children).indexOf(item);
+      openLightbox(imagesInGrid, clickedIndex);
+    });
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', () => navigate(-1));
+  lbNext.addEventListener('click', () => navigate(1));
+
+  // Close lightbox when clicking outside the image
+  lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
-        lightbox.style.display = 'none';
+      closeLightbox();
     }
-});
+  });
 
-// Commentaires
-const form = document.getElementById('commentForm');
-const list = document.getElementById('commentList');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (name && message) {
-        const comment = document.createElement('div');
-        comment.classList.add('comment');
-        comment.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
-        list.prepend(comment);
-
-        form.reset();
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        navigate(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigate(1);
+      }
     }
+  });
 });

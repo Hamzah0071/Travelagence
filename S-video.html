@@ -1,51 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="S-style-video.css">
-    <title>Vidéo Interactive</title>
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visites Vidéo — Diego Suarez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Vidéo Interactive</h1>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>Découvrez nos Merveilles</h2>
-            <p>
-                Bienvenue dans notre galerie d'images et de vidéos. 
-                Nous avons sélectionné  les video qui parle de diego 
-                Cliquez sur n'importe quelle vignette pour l'agrandir et voir les détails.
-                Nous avons sélectionné des moments spéciaux pour vous. Profitez de l'expérience immersive !
-            </p>
+<header>
+  <div class="header-bg" style="background-image: url('photo/Ville/1749885660310.jpg');"></div>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1><i class="fa-solid fa-video" style="font-size:0.6em;opacity:0.8;margin-right:12px;"></i>Visites Vidéo</h1>
+    <p class="header-sub"><i class="fa-solid fa-play-circle"></i>&nbsp; Explorez Diego Suarez en immersion</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,60 1080,0 1440,32 L1440,54 L0,54 Z" fill="#fffdf8"/>
+  </svg>
+</header>
 
-            <div class="gallery">
-                <div class="gallery-item" data-video-src="video/201 URBAN MUSIC - Diego Suarez - Copie.mp4">
-                    <img src="photo/video/Festival.png" alt="Vidéo de la nature">
-                    <div class="video-overlay">▶</div>
-                    <p>voici une musique crée par tout les artiste de Diego Suarez</p>
-                </div>
+<nav>
+  <a href="1-index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+  <a href="1-index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+  <a href="1-index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</nav>
 
-                <div class="gallery-item" data-video-src="video/Festival Zegny_Zo 2016 - 10e édition - Diego Suarez - Madagascar(720P_HD).mp4">
-                    <img src="photo/video/Annotation 2025-06-02 071826.png" alt="Vidéo d'exploration">
-                    <div class="video-overlay">▶</div>
-                    <p>le festival de Zegny Zoo qui c'est pass a Diego Suarez en 2016</p>
-                </div>
-            </div>
-        </section>
+<main class="container">
+  <section>
+    <h2><i class="fa-solid fa-clapperboard"></i> Visites Guidées en Vidéo</h2>
+    <h3>Vivez Diego Suarez comme si vous y étiez</h3>
+
+    <div style="background:linear-gradient(135deg,var(--ocean-pale),#d8f0f7);border-radius:var(--radius);padding:28px 32px;margin-bottom:40px;border-left:5px solid var(--ocean);">
+      <p style="color:var(--text);font-size:1rem;line-height:1.85;">
+        <i class="fa-solid fa-film" style="color:var(--ocean);margin-right:8px;"></i>
+        Nos visites guidées en vidéo vous permettent d'explorer Diego Suarez depuis chez vous.
+        Chaque vidéo est réalisée avec soin pour capturer l'essence authentique de chaque lieu.
+        Préparez votre voyage ou revivez vos souvenirs !
+      </p>
     </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-button" id="closeButton">&times;</span>
-        <div class="lightbox-content" id="lightboxContent"></div>
+    <!-- Vidéos placeholder (cards cliquables) -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px;">
+
+      <!-- Vidéo 1 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--sand);transition:transform 0.3s,box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(26,110,138,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#0d4a5e,#1a6e8a);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+          <div style="text-align:center;">
+            <i class="fa-solid fa-circle-play" style="font-size:3.5rem;color:rgba(255,255,255,0.9);display:block;margin-bottom:8px;"></i>
+            <span style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Cliquez pour voir la vidéo</span>
+          </div>
+          <div style="position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;font-size:0.75rem;font-weight:700;padding:4px 10px;border-radius:50px;display:flex;align-items:center;gap:5px;">
+            <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> VIDÉO
+          </div>
+          <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.78rem;padding:3px 9px;border-radius:4px;">4:32</div>
+        </div>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ocean);margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+            <i class="fa-solid fa-umbrella-beach"></i> Tour de Nosy Lojo
+          </div>
+          <p style="font-size:0.84rem;color:var(--text-soft);margin-bottom:12px;line-height:1.6;">Découvrez l'île sacrée de Diego Suarez depuis les airs et depuis la mer dans cette visite complète.</p>
+          <div style="display:flex;align-items:center;gap:14px;font-size:0.78rem;color:var(--text-soft);">
+            <span><i class="fa-solid fa-eye" style="color:var(--ocean);margin-right:4px;"></i>1.2k vues</span>
+            <span><i class="fa-solid fa-clock" style="color:var(--ocean);margin-right:4px;"></i>4 min 32 sec</span>
+            <span><i class="fa-solid fa-star" style="color:var(--sand-dark);margin-right:4px;"></i>4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vidéo 2 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--sand);transition:transform 0.3s,box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(26,110,138,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#1a5c30,#3a7d44);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+          <div style="text-align:center;">
+            <i class="fa-solid fa-circle-play" style="font-size:3.5rem;color:rgba(255,255,255,0.9);display:block;margin-bottom:8px;"></i>
+            <span style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Cliquez pour voir la vidéo</span>
+          </div>
+          <div style="position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;font-size:0.75rem;font-weight:700;padding:4px 10px;border-radius:50px;display:flex;align-items:center;gap:5px;">
+            <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> VIDÉO
+          </div>
+          <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.78rem;padding:3px 9px;border-radius:4px;">6:15</div>
+        </div>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green);margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+            <i class="fa-solid fa-tree"></i> Randonnée Tsingy Rouge
+          </div>
+          <p style="font-size:0.84rem;color:var(--text-soft);margin-bottom:12px;line-height:1.6;">Suivez notre guide à travers les formations rouges uniques au monde du parc Tsingy Rouge.</p>
+          <div style="display:flex;align-items:center;gap:14px;font-size:0.78rem;color:var(--text-soft);">
+            <span><i class="fa-solid fa-eye" style="color:var(--green);margin-right:4px;"></i>856 vues</span>
+            <span><i class="fa-solid fa-clock" style="color:var(--green);margin-right:4px;"></i>6 min 15 sec</span>
+            <span><i class="fa-solid fa-star" style="color:var(--sand-dark);margin-right:4px;"></i>4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vidéo 3 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--sand);transition:transform 0.3s,box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(26,110,138,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#5a3a10,#d4a96a);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+          <div style="text-align:center;">
+            <i class="fa-solid fa-circle-play" style="font-size:3.5rem;color:rgba(255,255,255,0.9);display:block;margin-bottom:8px;"></i>
+            <span style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Cliquez pour voir la vidéo</span>
+          </div>
+          <div style="position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;font-size:0.75rem;font-weight:700;padding:4px 10px;border-radius:50px;display:flex;align-items:center;gap:5px;">
+            <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> VIDÉO
+          </div>
+          <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.78rem;padding:3px 9px;border-radius:4px;">3:48</div>
+        </div>
+        <div style="padding:18px 20px;">
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--sand-dark);margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+            <i class="fa-solid fa-utensils"></i> Street food de Diego
+          </div>
+          <p style="font-size:0.84rem;color:var(--text-soft);margin-bottom:12px;line-height:1.6;">Balade gourmande dans les marchés et ruelles de Diego Suarez à la découverte des saveurs locales.</p>
+          <div style="display:flex;align-items:center;gap:14px;font-size:0.78rem;color:var(--text-soft);">
+            <span><i class="fa-solid fa-eye" style="color:var(--sand-dark);margin-right:4px;"></i>2.1k vues</span>
+            <span><i class="fa-solid fa-clock" style="color:var(--sand-dark);margin-right:4px;"></i>3 min 48 sec</span>
+            <span><i class="fa-solid fa-star" style="color:var(--sand-dark);margin-right:4px;"></i>4.7</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-        <a href="1-index.html" class="button" style="margin-left: 450px;">Retournez vers la premier page</a>
-    <script src="script html2.js"></script>
+    <!-- Bientôt disponible -->
+    <div style="text-align:center;background:var(--ocean-pale);border-radius:var(--radius);padding:36px;border:1.5px dashed rgba(26,110,138,0.25);">
+      <i class="fa-solid fa-film" style="font-size:2.5rem;color:var(--ocean);display:block;margin-bottom:12px;opacity:0.6;"></i>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--ocean);font-size:1.2rem;margin-bottom:8px;padding-left:0;">Plus de vidéos à venir…</h3>
+      <p style="color:var(--text-soft);font-size:0.9rem;max-width:420px;margin:0 auto 20px;">
+        Nous continuons à filmer et à explorer Diego Suarez pour vous. Revenez bientôt !
+      </p>
+      <a href="1-index.html#commentaires" class="btn-cta" style="font-size:0.88rem;padding:12px 26px;">
+        <i class="fa-solid fa-bell"></i> Nous suggérer un lieu
+      </a>
+    </div>
+
+  </section>
+
+  <a href="1-index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+</main>
+
+<footer>
+  <div class="footer-logo">Diego Suarez</div>
+  <p>La perle du nord de Madagascar</p>
+  <div class="footer-links">
+    <a href="1-index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="S-album.html"><i class="fa-solid fa-camera"></i> Photos</a>
+    <a href="1-index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</footer>
+
+<script>
+// Animation au scroll
+const cards = document.querySelectorAll('[onmouseover]');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(()=>{ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }, i*120);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+cards.forEach(c=>{ c.style.opacity='0'; c.style.transform='translateY(28px)'; c.style.transition='opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s'; obs.observe(c); });
+</script>
 </body>
 </html>

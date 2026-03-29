@@ -1,52 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="G-style-image.css">
-    <title>Foret- Diego Suarez</title>
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Forêt — Diego Suarez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="photo/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header style="background-image: url('photo/foret/route-vers-tsigy-rouge.jpg'); 
-    background-size: cover; background-position: center;">
-        <h1>Foret- Diego Suarez</h1>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>Découvrez nos foret</h2>
-            <p>
-                Bienvenue dans notre galerie spesiale les image de notre belle foret . Cliquez sur n'importe quelle vignette pour l'agrandir et voir les détails.
-                Nous avons sélectionné des moments spéciaux pour vous. Profitez de l'expérience immersive !
-            </p>
+<header>
+  <div class="header-bg" style="background-image: url('photo/foret/route-vers-tsigy-rouge.jpg');"></div>
+  <div class="header-overlay" style="background:linear-gradient(to bottom,rgba(20,60,20,0.55),rgba(20,60,20,0.78));"></div>
+  <div class="header-content">
+    <h1><i class="fa-solid fa-tree" style="font-size:0.6em;opacity:0.8;margin-right:12px;"></i>La Forêt</h1>
+    <p class="header-sub"><i class="fa-solid fa-location-dot"></i>&nbsp; Tsingy Rouge · Forêts du Nord</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,60 1080,0 1440,32 L1440,54 L0,54 Z" fill="#fffdf8"/>
+  </svg>
+</header>
 
-            <div class="gallery">
-                <div class="gallery-item" data-type="image" data-full-src="photo/foret/red-tsingy.jpg">
-                    <img src="photo/foret/red-tsingy.jpg" alt="Paysage magnifique">
-                </div>
+<nav class="navbar">
+  <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+  <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+  <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</nav>
 
-                <div class="gallery-item" data-type="image" data-full-src="photo/foret/route-vers-tsigy-rouge.jpg">
-                    <img src="photo/foret/route-vers-tsigy-rouge.jpg" alt="Architecture moderne">
-                </div>
+<main class="container">
+  <section>
+    <h2><i class="fa-solid fa-leaf"></i> Les Forêts & Paysages</h2>
+    <h3>Des paysages naturels époustouflants à perte de vue</h3>
 
-                <div class="photo/foret/red-tsingy.jpg" data-type="image" data-full-src="photo/foret/tsingy-rouge.jpg">
-                    <img src="photo/foret/tsingy-rouge.jpg" alt="Coucher de soleil">
-                </div>
-
-            </div>
-        </section>
+    <div style="background:linear-gradient(135deg,#eaf5ea,#d4edd4);border-radius:var(--radius);padding:28px 32px;margin-bottom:32px;border-left:5px solid var(--green);">
+      <p style="color:var(--text);font-size:1rem;line-height:1.85;">
+        <i class="fa-solid fa-seedling" style="color:var(--green);margin-right:8px;"></i>
+        Avant, Madagascar était appelée <strong>l'île verte</strong> car elle était couverte d'une végétation
+        flamboyante. Les montagnes qui traversent Diego Suarez, Ambilobe, Ambanja offrent des paysages
+        naturels époustouflants. Les <strong>Tsingy rouges</strong> sont une formation géologique unique au monde.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;">
+        <span class="badge" style="background:#eaf5ea;color:var(--green);border-color:rgba(58,125,68,0.18);"><i class="fa-solid fa-mountain"></i> Tsingy Rouge</span>
+        <span class="badge" style="background:#eaf5ea;color:var(--green);border-color:rgba(58,125,68,0.18);"><i class="fa-solid fa-tree"></i> Forêt dense</span>
+        <span class="badge" style="background:#eaf5ea;color:var(--green);border-color:rgba(58,125,68,0.18);"><i class="fa-solid fa-binoculars"></i> Randonnée</span>
+        <span class="badge" style="background:#eaf5ea;color:var(--green);border-color:rgba(58,125,68,0.18);"><i class="fa-solid fa-camera"></i> Photographie</span>
+      </div>
     </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-button" id="closeButton">&times;</span>
-        <div class="lightbox-content" id="lightboxContent"></div>
+    <!-- Faits nature -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:36px;">
+      <div style="background:var(--white);border:1.5px solid #c8e8c8;border-radius:var(--radius);padding:22px;box-shadow:0 3px 12px rgba(58,125,68,0.07);">
+        <i class="fa-solid fa-mountain-sun" style="font-size:1.6rem;color:var(--green);display:block;margin-bottom:10px;"></i>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--green);margin-bottom:6px;">Tsingy Rouge</div>
+        <p style="font-size:0.84rem;color:var(--text-soft);line-height:1.6;">Formation géologique unique de pinnacles rouges, résultat de millénaires d'érosion.</p>
+      </div>
+      <div style="background:var(--white);border:1.5px solid #c8e8c8;border-radius:var(--radius);padding:22px;box-shadow:0 3px 12px rgba(58,125,68,0.07);">
+        <i class="fa-solid fa-route" style="font-size:1.6rem;color:var(--green);display:block;margin-bottom:10px;"></i>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--green);margin-bottom:6px;">Routes panoramiques</div>
+        <p style="font-size:0.84rem;color:var(--text-soft);line-height:1.6;">Les routes vers Ambilobe et Ambanja traversent des paysages naturels d'une beauté rare.</p>
+      </div>
+      <div style="background:var(--white);border:1.5px solid #c8e8c8;border-radius:var(--radius);padding:22px;box-shadow:0 3px 12px rgba(58,125,68,0.07);">
+        <i class="fa-solid fa-frog" style="font-size:1.6rem;color:var(--green);display:block;margin-bottom:10px;"></i>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--green);margin-bottom:6px;">Biodiversité</div>
+        <p style="font-size:0.84rem;color:var(--text-soft);line-height:1.6;">Lémuriens, caméléons, oiseaux endémiques — la forêt malgache est un trésor vivant.</p>
+      </div>
     </div>
 
-    <a href="1-index.html" class="button" style="margin-left: 450px;">Retournez vers la premier page</a>
-    <script src="script html2.js"></script>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-type="image" data-full-src="photo/foret/route-vers-tsigy-rouge.jpg">
+        <img src="photo/foret/route-vers-tsigy-rouge.jpg" alt="Route vers Tsingy Rouge">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Route vers Tsingy Rouge</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/foret/red-tsingy.jpg">
+        <img src="photo/foret/red-tsingy.jpg" alt="Tsingy Rouge">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Tsingy Rouge</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/foret/route-vers-tsigy-rouge.jpg">
+        <img src="photo/foret/route-vers-tsigy-rouge.jpg" alt="Forêt dense">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Forêt dense</span></div>
+      </div>
+      <div class="gallery-item" data-type="image" data-full-src="photo/foret/red-tsingy.jpg">
+        <img src="photo/foret/red-tsingy.jpg" alt="Vue panoramique">
+        <div class="item-overlay"><span><i class="fa-solid fa-expand"></i> Vue panoramique</span></div>
+      </div>
+    </div>
+  </section>
 
+  <a href="1-index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Retour à l'accueil</a>
+</main>
+
+<footer class="footer">
+  <div class="footer-logo">Diego Suarez</div>
+  <p>La perle du nord de Madagascar</p>
+  <div class="footer-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+    <a href="index.html#galerie"><i class="fa-solid fa-images"></i> Galerie</a>
+    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</footer>
+
+<!-- <div id="lightbox" class="lightbox">
+  <button class="lb-close" id="closeButton"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-nav lb-prev" id="lbPrev"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="lb-nav lb-next" id="lbNext"><i class="fa-solid fa-chevron-right"></i></button>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+    <img class="lightbox-content" id="lbMainImg" src="" alt="">
+    <div id="lbCounter" style="color:rgba(255,255,255,0.55);font-size:0.82rem;letter-spacing:1px;"></div>
+    <div id="lbThumbs" class="lb-thumbs"></div>
+  </div>
+</div> -->
+
+<style>
+  .lb-nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:white;font-size:1.3rem;width:50px;height:50px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s;backdrop-filter:blur(4px);z-index:10001;}
+  .lb-nav:hover{background:var(--green);transform:translateY(-50%) scale(1.1);}
+  .lb-prev{left:18px;}.lb-next{right:18px;}
+  .lb-thumbs{display:flex;gap:8px;overflow-x:auto;max-width:80vw;padding-bottom:4px;}
+  .lb-thumbs img{width:50px;height:50px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:0.45;border:2px solid transparent;transition:opacity .2s,border-color .2s;}
+  .lb-thumbs img.active{opacity:1;border-color:var(--green-light);}
+</style>
+<script src="script html2.js"></script>
 </body>
 </html>
